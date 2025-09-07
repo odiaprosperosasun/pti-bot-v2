@@ -1,0 +1,135 @@
+import os
+from firecrawl import FirecrawlApp
+from google import genai
+from google.genai import types
+import pathlib
+import httpx
+import json
+from dotenv import load_dotenv
+import streamlit as st  # Add Streamlit import
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Now you can access the keys using os.environ
+google_api_key = os.getenv('GOOGLE_API_KEY')
+firecrawl_api_key = os.getenv('FIRECRAWL_API_KEY')
+helicone_api_key = os.getenv('HELICONE_API_KEY')
+
+# Example usage
+print(google_api_key)  # This will print the Google API key
+
+client = genai.Client(
+    api_key=google_api_key
+)
+
+fire = FirecrawlApp(api_key=firecrawl_api_key)
+
+def get_markdown_from_urls(urls: list[str]):
+    url = "https://pti.edu.ng"
+
+    # Get all links from the website
+    all_links = fire.map_url(url).get('links')[1:]  
+
+    batch_scrape_result = fire.batch_scrape_urls(all_links, {'formats': ['markdown']})
+
+    all_markdown = []
+
+    for page in batch_scrape_result['data']:
+        all_markdown.append({
+            "url": page['metadata']['url'],
+            "markdown": page['markdown']
+        })
+
+    return all_markdown
+
+def save_markdown_to_file(markdowns, filename="pti_markdown_results_all.json"):
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(markdowns, file, indent=4, ensure_ascii=False)
+
+def get_markdown_from_file(filename="data/pti_markdown_results_all.json"):
+    with open(filename, "r", encoding="utf-8") as file:
+        data = json.load(file)
+    
+    markdowns = [item['markdown'] for item in data]
+    return markdowns
+
+def cag_response_call(all_markdowns, prompt):
+    try:
+        print("Fetching response")
+        response = client.models.generate_content(
+            model="gemini-1.5-flash-8b",
+            contents=[json.dumps(all_markdowns), prompt])
+        
+        return(response.text)
+
+    except Exception as e:
+    #   print(e)
+    #   print(f'An exception occurred: {e.message}')
+      return(f'An exception occurred: {e.message}')
+
+  
+def create_prompt(user_input):
+    prompt = f"""
+    You are a chatbot that provides information only about PTI Nigeria.
+    If a user asks something unrelated, politely refuse.
+    User Input: {user_input}
+    """
+    return prompt
+
+
+
+def main():
+    all_markdowns = get_markdown_from_file()
+    st.set_page_config(
+        page_title="PTI chatbot",
+        page_icon="assets/pti_logo_bg.jpeg",
+        menu_items={
+            'Get Help': 'https://www.extremelycoolapp.com/help',
+            'Report a bug': "https://www.extremelycoolapp.com/bug",
+            'About': "# This is a header. This is an *extremely* cool app!"
+        }
+    )
+    st.logo("assets/pti_logo_bg.jpeg")
+    st.sidebar.write("Hi, Welcome 👋")
+    st.html("<title>PTI chatbot</title>")
+    
+
+
+    st.title("PTI Chatbot")  # Set the title for the Streamlit app
+    st.caption("A chatbot for the Petroleum Training Institute")
+    # st.subheader("A chatbot for the Petroleum Training Institute")
+
+    # Initialize session state for chat history
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    if prompt := st.chat_input("Ask your question about PTI Nigeria"):
+        # Display user message in chat message container
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        # Add user message to chat history
+        st.session_state.messages.append({"role": "user", "content": prompt})
+
+        with st.spinner("In progress...", show_time=True):
+            st.session_state.messages.append({"role": "assistant", "content": "loading..."})
+
+            # Display assistant response in chat message container
+            with st.chat_message("assistant"):
+                formatted_prompt = create_prompt(prompt)
+                cag_response = cag_response_call(all_markdowns, formatted_prompt)
+                response = st.write(cag_response)
+            # Add assistant response to chat history
+            st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+
+
+if __name__ == "__main__":
+    main()
+
+

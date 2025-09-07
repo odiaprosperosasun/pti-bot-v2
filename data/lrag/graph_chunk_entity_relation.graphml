@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d9" for="edge" attr.name="file_path" attr.type="string" />
+  <key id="d8" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d7" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d6" for="edge" attr.name="description" attr.type="string" />
+  <key id="d5" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d4" for="node" attr.name="file_path" attr.type="string" />
+  <key id="d3" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d2" for="node" attr.name="description" attr.type="string" />
+  <key id="d1" for="node" attr.name="entity_type" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_id" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="Petroleum Training Institute (PTI) Effurun">
+      <data key="d0">Petroleum Training Institute (PTI) Effurun</data>
+      <data key="d1">organization</data>
+      <data key="d2">The Petroleum Training Institute (PTI) is located in Effurun, Delta State, Nigeria.  It offers various academic programs, including Higher National Diploma (HND) and National Diploma (ND) programs, and conducts Post UTME screening exercises.  It also collaborates with organizations like the Oil Producers Trade Section (OPTS) and the Uganda National Oil Company (UNOC) for manpower development and training.  The institute has an alumni association with a newly elected national president.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="admin">
+      <data key="d0">admin</data>
+      <data key="d1">person</data>
+      <data key="d2">An administrator associated with the PTI website.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Chris Bassey">
+      <data key="d0">Chris Bassey</data>
+      <data key="d1">person</data>
+      <data key="d2">A member of the PTI community.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Oil Producers Trade Section (OPTS)">
+      <data key="d0">Oil Producers Trade Section (OPTS)</data>
+      <data key="d1">organization</data>
+      <data key="d2">OPTS is an organization that partners with PTI for manpower development in the African oil industry.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Uganda National Oil Company (UNOC)">
+      <data key="d0">Uganda National Oil Company (UNOC)</data>
+      <data key="d1">organization</data>
+      <data key="d2">The Uganda National Oil Company (UNOC) is an organization that seeks collaboration with PTI for manpower training.  A delegation, led by Catherine Tumuaime, visited PTI for this purpose. &lt;SEP&gt;UNOC is an organization seeking collaboration with PTI for manpower training.</data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a&lt;SEP&gt;chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Dr. Celestine Iyamu">
+      <data key="d0">Dr. Celestine Iyamu</data>
+      <data key="d1">person</data>
+      <data key="d2">Dr. Celestine Iyamu is the National President of the PTI Alumni Association. &lt;SEP&gt;The newly elected National President of the PTI Alumni Association.</data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a&lt;SEP&gt;chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="2024/2025 Academic Session">
+      <data key="d0">2024/2025 Academic Session</data>
+      <data key="d1">event</data>
+      <data key="d2">The academic year for which PTI is conducting admissions and Post UTME screening.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Post UTME Screening Exercise">
+      <data key="d0">Post UTME Screening Exercise</data>
+      <data key="d1">event</data>
+      <data key="d2">An entrance examination conducted by PTI for prospective students.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Part-time (SICE) Higher National Diploma (HND) and National Diploma (ND) Programmes">
+      <data key="d0">Part-time (SICE) Higher National Diploma (HND) and National Diploma (ND) Programmes</data>
+      <data key="d1">category</data>
+      <data key="d2">Academic programs offered by PTI.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Effurun, Delta State">
+      <data key="d0">Effurun, Delta State</data>
+      <data key="d1">geo</data>
+      <data key="d2">The location of the Petroleum Training Institute.</data>
+      <data key="d3">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="PTI Alumni Association">
+      <data key="d0">PTI Alumni Association</data>
+      <data key="d1">organization</data>
+      <data key="d2">The PTI Alumni Association is an organization of graduates from the Petroleum Training Institute. Dr. Celestine Iyamu is its National President. &lt;SEP&gt;The alumni association of the Petroleum Training Institute.</data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a&lt;SEP&gt;chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Petroleum Training Institute (PTI)">
+      <data key="d0">Petroleum Training Institute (PTI)</data>
+      <data key="d1">organization</data>
+      <data key="d2">The Petroleum Training Institute (PTI) is an educational institution offering various petroleum-related training programs, including diploma and higher national diploma programs.  It is located in Effurun, Nigeria, and collaborates with organizations like the Uganda National Oil Company (UNOC) for manpower training.  The institute also conducts post-UTME screening exercises for admission into its programs.  Its mandate is under review for potential consolidation. </data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Catherine Tumuaime">
+      <data key="d0">Catherine Tumuaime</data>
+      <data key="d1">person</data>
+      <data key="d2">Catherine Tumuaime led a delegation from the Uganda National Oil Company (UNOC) to visit the Petroleum Training Institute (PTI).</data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Nigeria Content Development Management Board (NCDMB)">
+      <data key="d0">Nigeria Content Development Management Board (NCDMB)</data>
+      <data key="d1">organization</data>
+      <data key="d2">The NCDMB collaborated with UNOC in their visit to PTI. </data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Effurun">
+      <data key="d0">Effurun</data>
+      <data key="d1">geo</data>
+      <data key="d2">Effurun is the location of the Petroleum Training Institute (PTI).</data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Amb. Nicholas Agbo Ella">
+      <data key="d0">Amb. Nicholas Agbo Ella</data>
+      <data key="d1">person</data>
+      <data key="d2">Amb. Nicholas Agbo Ella is the Permanent Secretary of the Federal Ministry of Petroleum Resources (MPR) and has called for a consolidation of PTI's mandate. </data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <node id="Federal Ministry of Petroleum Resources (MPR)">
+      <data key="d0">Federal Ministry of Petroleum Resources (MPR)</data>
+      <data key="d1">organization</data>
+      <data key="d2">The Federal Ministry of Petroleum Resources (MPR) is the ministry under which the Petroleum Training Institute (PTI) operates. Its Permanent Secretary, Amb. Nicholas Agbo Ella, advocates for a consolidation of PTI's mandate. </data>
+      <data key="d3">chunk-dcde1d3e0ebafad12ce54a1e6132bb5a</data>
+      <data key="d4">unknown_source</data>
+    </node>
+    <edge source="Petroleum Training Institute (PTI) Effurun" target="admin">
+      <data key="d5">8.0</data>
+      <data key="d6">Admin is associated with the PTI website and likely an employee or administrator of the institute.</data>
+      <data key="d7">employment, administration</data>
+      <data key="d8">chunk-7ef1c5ec2b7b67495056dcdba1a64847</data>
+      <data key="d9">unknown_source</data>
+    </edge>
+  </graph>
+</graphml>

@@ -1,0 +1,78 @@
+{
+  "hybrid": {
+    "e685d1f1d7e02aa3a7508d29fc3da1e6": {
+      "return": "{\"high_level_keywords\": [\"Meaning\", \"Acronym\", \"Institution\"], \"low_level_keywords\": [\"PTI\", \"Petroleum Training Institute\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "what is the full meaning of PTI"
+    },
+    "85ba40fe97951473590dffa9b9bedab1": {
+      "return": "Petroleum Training Institute. (From PTI's official documentation)\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "what is the full meaning of PTI"
+    },
+    "28a325a89092928560cd29eef9fc01eb": {
+      "return": "{\"high_level_keywords\": [\"PTI administration\", \"Leadership\"], \"low_level_keywords\": [\"Principal\", \"Petroleum Training Institute\", \"PTI\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "who is the principal of PTI"
+    },
+    "4e17abccdf106cd19fbab4728fa0da9b": {
+      "return": "The Principal/Chief Executive of PTI is Dr. Henry A. Adimula.\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "who is the principal of PTI"
+    },
+    "a870e1861625dbbc5dfcc5d51eeb4cc8": {
+      "return": "{\"high_level_keywords\": [\"PTI administration\", \"Admissions process\"], \"low_level_keywords\": [\"Post UTME\", \"Exam date\", \"Dr. Henry A. Adimula\", \"Principal\", \"Petroleum Training Institute\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "when was the last post utme date"
+    },
+    "891595ae969259185976cab5558fa219": {
+      "return": "I do not have access to the specific date of the last Post-UTME screening exercise.  Please contact the Admissions Office for this information.\n",
+      "cache_type": "query",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "when was the last post utme date"
+    }
+  },
+  "mix": {
+    "f15c741467544d284e28873590960ae5": {
+      "return": "{\"high_level_keywords\": [\"Post-UTME\", \"Admissions\", \"Academic Calendar\"], \"low_level_keywords\": [\"date\", \"screening exercise\", \"PTI\", \"Admissions Office\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "when was the last post utme date"
+    },
+    "ded895ba19f49dcc4c9343ea6889a837": {
+      "return": "{\"high_level_keywords\": [\"Post-UTME exam date\", \"Admissions process\"], \"low_level_keywords\": [\"Post-UTME\", \"Admissions Office\", \"date\"]}",
+      "cache_type": "keywords",
+      "embedding": null,
+      "embedding_shape": null,
+      "embedding_min": null,
+      "embedding_max": null,
+      "original_prompt": "what was my previous question"
+    }
+  }
+}
