@@ -150,25 +150,30 @@ def main():
                     context = llmaIndexAgent.llma_index_context
                     answer = llmaIndexAgent.llma_index_answer
                     print(f"Answer: {response}")
-                    st.markdown(answer)
-            # Prepare assistant message
-            assistant_msg = {"role": "assistant", "content": answer}
-            st.session_state.private_messages.append(assistant_msg)
 
-            # Save both user and assistant messages to Supabase
-            try:
-                timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
-                rows = [
-                    {"user_id": user_id, "role": "user", "content": str(prompt), "timestamp": str(timestamp)},
-                    {"user_id": user_id, "role": "assistant", "content": str(answer), "timestamp": str(timestamp)}
-                ]
-                df2 = execute_query(
-                    supabase.table("chat_history").insert(rows, count="None"),
-                    ttl=0,
-                )
-                # print(df2)
-            except Exception as e:
-                st.warning("Could not save chat to database.")
+                    if "error" in str(response).lower():
+                        st.error(response)
+                    else:
+                        st.markdown(response)
+
+                        # Prepare assistant message
+                        assistant_msg = {"role": "assistant", "content": response}
+                        st.session_state.private_messages.append(assistant_msg)
+
+                        # Save both user and assistant messages to Supabase
+                        try:
+                            timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                            rows = [
+                                {"user_id": user_id, "role": "user", "content": str(prompt), "timestamp": str(timestamp)},
+                                {"user_id": user_id, "role": "assistant", "content": str(response), "timestamp": str(timestamp)}
+                            ]
+                            df2 = execute_query(
+                                supabase.table("chat_history").insert(rows, count="None"),
+                                ttl=0,
+                            )
+                            # print(df2)
+                        except Exception as e:
+                            st.warning("Could not save chat to database.")
 
 
 

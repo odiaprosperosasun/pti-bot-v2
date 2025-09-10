@@ -6,8 +6,9 @@ import pathlib
 import httpx
 import json
 from dotenv import load_dotenv
-from llama_index.indices.managed.llama_cloud import LlamaCloudIndex
+from llama_cloud_services import LlamaCloudIndex
 from llama_index.llms.google_genai import GoogleGenAI
+import llama_cloud.core.api_error
 
 
 
@@ -23,6 +24,8 @@ class LmmaIndexAgent:
 
         llma_index_api_key = os.getenv('LLMA_INDEX_API_KEY')
 
+        organization_id = os.getenv('LLMA_INDEX_ORG_ID')
+
         self.client = genai.Client(api_key=google_api_key)
 
         self.llm = GoogleGenAI(
@@ -37,21 +40,31 @@ class LmmaIndexAgent:
         self.llma_index = LlamaCloudIndex(
             name="pti_data",
             project_name="Default",
-            organization_id="4d77130f-11dc-4bb6-9131-289b791f6735",
+            organization_id=organization_id,
             api_key=llma_index_api_key,
         )
 
-        query = self.answer_query(prompt)
+        try:
+            query = self.answer_query(prompt)
+            
+            self.llma_index_answer = query
+
+            self.llma_index_context = self.retrieve_context(prompt)
+
+            formatted_prompt = self.create_prompt(prompt, self.llma_index_context, conversation_history)
+
+            self.rag_response = self.rag_response_call(formatted_prompt)
+
+        except llama_cloud.core.api_error.ApiError as e:
+            print(f"LLama Cloud API Error: {e}")
+            self.rag_response = "Sorry, there was an error. please try again later ☹️!"
+            self.llma_index_answer = "Sorry, there was an error. please try again later ☹️!"
+            self.llma_index_context = "Sorry, there was an error. please try again later ☹️!"
+        except Exception as e:
+            self.rag_response = "An unexpected error occurred. please try again later ☹️!"
+            self.llma_index_answer = "An unexpected error occurred. please try again later ☹️!"
+            self.llma_index_context = "An unexpected error occurred. please try again later ☹️!"
         
-        self.llma_index_answer = query
-
-
-        self.llma_index_context = self.retrieve_context(prompt)
-
-        formatted_prompt = self.create_prompt(prompt, self.llma_index_context, conversation_history)
-
-        self.rag_response = self.rag_response_call(formatted_prompt)
-
 
 
     def retrieve_context(self, query):
