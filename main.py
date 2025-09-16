@@ -4,6 +4,7 @@ import streamlit as st
 from cag.cag_agent import CagAgent
 from rag.rag_agent_func import rag, rag_insert_data_to_db, rag_retrieve
 from llmaindex.llma_index_agent import LmmaIndexAgent
+# from groq_inference.groq_agent import GroqAgent
 
 # For Google Auth and Supabase
 from st_supabase_connection import SupabaseConnection, execute_query
@@ -45,9 +46,13 @@ def use_public():
                 response = llmaIndexAgent.rag_response
                 context = llmaIndexAgent.llma_index_context
                 answer = llmaIndexAgent.llma_index_answer
-                print(f"Answer: {response}")
-                st.markdown(answer)
-        st.session_state.messages.append({"role": "assistant", "content": answer})
+
+                # groqAgent = GroqAgent(prompt, st.session_state.messages)
+                # response = groqAgent.rag_response
+
+                print(f"Answer: {answer}")
+                st.markdown(response)
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 def main():
@@ -149,7 +154,11 @@ def main():
                     response = llmaIndexAgent.rag_response
                     context = llmaIndexAgent.llma_index_context
                     answer = llmaIndexAgent.llma_index_answer
-                    print(f"Answer: {response}")
+
+                    # groqAgent = GroqAgent(prompt, st.session_state.private_messages)
+                    # response = groqAgent.rag_response
+
+                    print(f"Answer: {answer}")
 
                     if "error" in str(response).lower():
                         st.error(response)
